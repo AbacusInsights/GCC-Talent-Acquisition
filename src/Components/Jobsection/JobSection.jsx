@@ -23,7 +23,15 @@ export default function JobsSection() {
 
   return (
     /* Note: no isolate / z-index set here so overlays can sit on top */
-    <section className="max-w-[1120px] mx-auto my-8 px-4">
+    <section className="max-w-[1120px] mx-auto bg-#e3e8f1ff my-8 px-4">
+      <div className="text-center mb-10 animate-fade-in">
+          <h1 className="text-3xl sm:text-4xl font-semibold font-roboto text-[#0ea5e9]">
+            Explore Careers & Internships
+          </h1>
+          <p className="text-slate-600 mt-3 text-base font-roboto sm:text-lg max-w-2xl mx-auto">
+            Find opportunities that match your aspirations — whether you're a student, fresher, or experienced professional.
+          </p>
+        </div>
       <div className="grid gap-6 md:gap-10 grid-cols-1 md:[grid-template-columns:1fr_360px]">
 
         <div className="relative bg-white rounded-2xl p-6 shadow-sm border border-gray-100">

@@ -25,7 +25,6 @@ export default function Header() {
       document.body.appendChild(root);
     }
 
-    // Add padding top so content never hides behind sticky header
     document.body.style.paddingTop = "72px";
 
     return () => {
@@ -34,9 +33,10 @@ export default function Header() {
   }, []);
 
   const navItems = [
+    { label: "Home", href: "/" },
     { label: "Corporates", href: "/Corporate" },
     { label: "Universities", href: "/University" },
-    { label: "Opportunity", href: "/jobs" },
+    // { label: "Opportunity", href: "/jobs" },
     { label: "About Us", href: "/About" },
     { label: "Contact Us", href: "/Contact" }
   ];
@@ -44,48 +44,67 @@ export default function Header() {
   return (
     <>
       {/* Sticky header */}
-      <header className="fixed top-0 inset-x-0 z-40 bg-white border-b border-gray-200 shadow-sm">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 h-[72px] flex items-center justify-between">
-          
-          <div className="flex items-center gap-3">
-            {/* Mobile hamburger */}
+      <header className="fixed top-0 inset-x-0 z-40 shadow-[0_2px_8px_rgba(0,0,0,0.12)] bg-gradient-to-r from-[#1a232b] to-[#14A4F3]">
+        <div className="w-[98%] mx-auto px-6 h-[72px] flex items-center justify-between">
+
+          {/* LEFT: Logo + Mobile menu */}
+          <div className="flex items-center gap-4 flex-shrink-0">
             <button
-              className="inline-flex md:hidden items-center justify-center p-2 rounded-md hover:bg-gray-100"
+              className="inline-flex md:hidden items-center justify-center p-2 rounded-md hover:bg-white/10 transition-colors"
               onClick={() => setOpen(true)}
               aria-label="Open Menu"
             >
-              <svg className="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" strokeWidth="1.7" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="1.7" viewBox="0 0 24 24">
                 <path d="M3 6h18M3 12h18M3 18h18" />
               </svg>
             </button>
 
-            {/* Brand */}
-            <div className="flex items-center gap-3">
-              <div className="w-[44px] h-[44px] rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold">
-                L
-              </div>
-              <span className="hidden sm:block font-semibold text-slate-900">Learners Digital</span>
+            <div className="-ml-6 md:-ml-2">
+              <Image
+                src="/Hero/logo.png"
+                alt="Learners Digital Full Logo"
+                width={240}
+                height={100}
+                className="object-contain"
+                priority
+              />
             </div>
           </div>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex gap-7 text-sm text-slate-600">
+          {/* CENTER: Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-6 ml-auto">
             {navItems.map((n) => (
-              <a key={n.href} href={n.href} className="hover:text-black">{n.label}</a>
+              <a
+                key={n.href}
+                href={n.href}
+                className="text-white text-[16px] font-semibold opacity-95 hover:opacity-100 transition-opacity"
+              >
+                {n.label}
+              </a>
             ))}
           </nav>
 
-          {/* CTA */}
-          <a
-            href="/enquiry"
-            className="inline-flex items-center bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700"
-          >
-            Enquiry Now
-          </a>
+          {/* RIGHT: Login + Enquiry */}
+          <div className="flex items-center gap-5 ml-10">
+            <a href="/login" className="text-white text-[16px] font-semibold opacity-95 hover:opacity-100 hidden md:inline-block">
+              Login
+            </a>
+
+            <a
+              href="/Contact"
+              className="flex items-center gap-2 bg-white text-[#1a232b] px-5 py-2 rounded-full font-bold shadow-[0px_4px_14px_rgba(0,118,200,0.25)] hover:-translate-y-[3px] hover:shadow-[0px_8px_22px_rgba(0,118,200,0.32)] transition-all duration-300 animate-[enquiryGlow_1.7s_ease-in-out_infinite]"
+            >
+              <span>Enquiry Now</span>
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
+                <path d="M5 12h14M13 5l6 7-6 7" />
+              </svg>
+            </a>
+          </div>
+
         </div>
       </header>
 
-      {/* Drawer Portal */}
+      {/* Drawer */}
       {open && (
         <DrawerLeft
           navItems={navItems}
@@ -101,7 +120,6 @@ export default function Header() {
    LEFT-SIDE DRAWER COMPONENT (PORTAL)
 ----------------------------------------- */
 function DrawerLeft({ onClose, navItems }) {
-  // lock scroll
   useEffect(() => {
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -110,14 +128,12 @@ function DrawerLeft({ onClose, navItems }) {
 
   const drawerContent = (
     <div className="fixed inset-0 z-50 flex">
-      
-      {/* Backdrop */}
+
       <div
         className="flex-1 bg-black/40 backdrop-blur-sm"
         onClick={onClose}
       />
 
-      {/* Drawer (LEFT SIDE) */}
       <div className="
         w-[280px] max-w-[85vw] h-full 
         bg-white shadow-xl 
@@ -126,7 +142,6 @@ function DrawerLeft({ onClose, navItems }) {
         flex flex-col
         translate-x-0
       ">
-        {/* Close Button */}
         <button
           onClick={onClose}
           className="absolute right-3 top-3 p-2 rounded-full hover:bg-gray-100"
@@ -136,15 +151,13 @@ function DrawerLeft({ onClose, navItems }) {
           </svg>
         </button>
 
-        {/* Branding */}
         <div className="flex items-center gap-3 p-5 mt-6">
-          <div className="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center font-semibold">
+          <div className="w-10 h-10 bg-[#0f6fa8] text-white rounded-lg flex items-center justify-center font-semibold">
             L
           </div>
           <div className="font-semibold text-slate-900">Learners Digital</div>
         </div>
 
-        {/* Nav Items */}
         <nav className="flex flex-col gap-2 mt-3 px-5">
           {navItems.map((n) => (
             <a
@@ -158,12 +171,11 @@ function DrawerLeft({ onClose, navItems }) {
           ))}
         </nav>
 
-        {/* Footer CTA */}
         <div className="mt-auto p-5 flex gap-3">
           <a href="/login" className="text-gray-600 hover:text-black text-sm">Login</a>
           <a
             href="/enquiry"
-            className="ml-auto bg-blue-600 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-700"
+            className="ml-auto bg-[#0f6fa8] text-white px-4 py-2 rounded-full text-sm hover:opacity-95"
           >
             Enquiry Now
           </a>

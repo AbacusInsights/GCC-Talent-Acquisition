@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import { FaBullseye, FaLightbulb, FaGlobe } from "react-icons/fa";
 
+import OurTeam from "../../Components/TeamS/TeamSection";
 
 
 
@@ -315,7 +316,7 @@ Our achievements are not just numbers  they represent lives changed, companies e
         </div>
 
       </div>
-      <ourTeam/>
+      <OurTeam/>
    
 
 

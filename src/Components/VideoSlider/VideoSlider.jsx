@@ -126,7 +126,7 @@ export default function VideoSlider({ videos = [] }) {
     <section className="w-full py-8">
       <div className="max-w-[1200px] mx-auto px-4">
         <div className="mb-6">
-          <h3 className="text-2xl font-semibold text-black text-center">Work in Actions</h3>
+          <h3 className="text-4xl font-Roboto-semibold text-[#0ea5e9] text-center">Work in Actions</h3>
           <p
             className="mt-2 mb-6 mx-auto"
             style={{ maxWidth: 720, textAlign: "center", color: "rgba(34,34,34,0.75)" }}

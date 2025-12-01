@@ -7,12 +7,12 @@ import { Autoplay } from "swiper/modules";
 
 export default function OurTeam() {
   const teamMembers = [
-    { name: "Murali Mohan Konareddy", role: "Founder", img: "/Gemini_Generated_Image_1f0ilv1f0ilv1f0i.png" },
-    { name: "Murali Mohan Konareddy", role: "Founder", img: "/Gemini_Generated_Image_1f0ilv1f0ilv1f0i.png" },
-    { name: "Murali Mohan Konareddy", role: "Founder", img: "/Gemini_Generated_Image_1f0ilv1f0ilv1f0i.png" },
-    { name: "Murali Mohan Konareddy", role: "Founder", img: "/Gemini_Generated_Image_1f0ilv1f0ilv1f0i.png" },
-    { name: "Murali Mohan Konareddy", role: "Founder", img: "/Gemini_Generated_Image_1f0ilv1f0ilv1f0i.png"},
-    { name: "Murali Mohan Konareddy", role: "Founder", img: "/Gemini_Generated_Image_1f0ilv1f0ilv1f0i.png" },
+    { name: "Murali Mohan Konareddy", role: "Founder", img: "/Team/img1.png" },
+    { name: "Rishab Verma", role: "Trainer", img: "/Team/img2.jpg" },
+    { name: "Krati", role: "Trainer", img: "/Team/img3.jpg" },
+    { name: "Ravi K R", role: "Trainer", img: "/Team/img4.jpg" },
+    { name: "Murali Mohan Konareddy", role: "Founder", img: "/Team/img1.png"},
+    { name: "Rishab Verma", role: "Trainer", img: "/Team/img2.jpg" },
   ];
 
   return (
@@ -23,7 +23,7 @@ export default function OurTeam() {
       {/* Title */}
       <h3 className="text-4xl font-bold text-center">
         <span className="text-[#0f8ddf]">Our</span>{" "}
-        <span className="text-[#e63950]">Team</span>
+        <span className="text-[#0f8ddf]">Team</span>
       </h3>
 
       {/* About Text */}
@@ -66,7 +66,7 @@ export default function OurTeam() {
                 </h4>
 
                 {/* Role */}
-                <p className="text-[#e63950] font-medium text-sm mt-1">
+                <p className="text-[#69aad1] font-medium text-sm mt-1">
                   {member.role}
                 </p>
               </div>

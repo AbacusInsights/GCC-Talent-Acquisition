@@ -16,7 +16,7 @@ export default function ManSection() {
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.1 }
     );
 
     elements.forEach((el) => observer.observe(el));
@@ -36,145 +36,251 @@ export default function ManSection() {
     "/partners/abacus-logo.png?v=1",
     "/partners/iquartic2.png?v=1",
     "/partners/infosys-logo.jpg?v=1",
+    "/partners/newwave.png?v=1",
+    "/partners/NexTurn.png?v=1",
+    "/partners/1Onyx.png?v=1",
   ];
 
   return (
-    <div className="bg-[#f5f7fa] text-[#222] font-['Roboto',sans-serif] px-6 md:px-10 lg:px-16 py-12 md:py-16">
-      {/* HEADER */}
-      <div className="flex items-center gap-4 md:gap-6">
-        <div className="w-12 h-12 md:w-14 md:h-14 bg-[#1e88e5] rounded-lg flex items-center justify-center shadow-[0_6px_18px_rgba(30,136,229,0.35)] flex-shrink-0">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden>
-            <path d="M10 2h4a2 2 0 0 1 2 2v2h3a1 1 0 0 1 1 1v3H4V7a1 1 0 0 1 1-1h3V4a2 2 0 0 1 2-2Zm4 4V4h-4v2h4ZM4 11h16v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7Z" />
-          </svg>
-        </div>
+    <div
+      className="relative w-full overflow-hidden bg-slate-50 font-['Roboto',sans-serif] text-slate-900 selection:bg-indigo-100 selection:text-indigo-900 group/section"
+    >
+      {/* 
+        BACKGROUND LAYERS 
+        - Clean, professional background without cursor tracking
+      */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-50 via-white to-slate-100 opacity-90"></div>
 
-        <h1 className="text-xl md:text-3xl lg:text-4xl font-extrabold text-[#1a2b4c] leading-tight">
-          For Corporates{" "}
-          <span className="block md:inline font-semibold text-base md:text-lg text-[#1a2b4c] opacity-70">
-            ~ Build a Future-Ready Workforce
-          </span>
-        </h1>
+        {/* Animated Blobs - Retained for subtle ambiance */}
+        <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] bg-blue-100/40 rounded-full mix-blend-multiply filter blur-[100px] animate-blob"></div>
+        <div className="absolute top-[20%] right-[-10%] w-[500px] h-[500px] bg-indigo-100/40 rounded-full mix-blend-multiply filter blur-[100px] animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-[-20%] left-[20%] w-[700px] h-[700px] bg-purple-100/40 rounded-full mix-blend-multiply filter blur-[120px] animate-blob animation-delay-4000"></div>
+
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.02]"></div>
       </div>
 
-      {/* DESCRIPTION */}
-      <p className="mt-3 md:mt-4 text-[#465366] max-w-3xl leading-relaxed text-sm md:text-base">
-        We identify and develop fresh IT talent by strengthening their technical, professional, and
-        industry-relevant skills through structured, practical learning methodologies.
-      </p>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-20 py-12 md:py-20">
 
-      {/* THREE CARDS */}
-      <div className="mt-8 md:mt-10 flex gap-5 flex-wrap">
-        {/* CARD 1 */}
-        <div className="reveal opacity-0 transform translate-y-4 scale-[0.98] transition-all duration-700 ease-[cubic-bezier(.22,.9,.33,1)] bg-white p-5 md:p-6 rounded-xl border border-[#e3e7ee] shadow-[0_4px_14px_rgba(0,0,0,0.08)] min-w-[260px] flex-1 hover:-translate-y-1.5 hover:shadow-[0_14px_30px_rgba(0,0,0,0.12)]">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-10 h-10 bg-[#e8f1ff] rounded-lg flex items-center justify-center flex-shrink-0">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e88e5" aria-hidden>
-                <path d="M3 9l9-6 9 6v2H3V9zm2 3h14v8H5v-8zm3 2v4h2v-4H8zm4 0v4h2v-4h-2z" />
+        {/* HEADER SECTION */}
+        <div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-16 mb-12 md:mb-16 reveal transition-transform duration-100 ease-out will-change-transform">
+
+          {/* Abstract Tech Logo */}
+          <div className="relative group/logo flex-shrink-0 pt-2">
+            <div className="absolute inset-0 bg-indigo-500/20 rounded-full blur-xl opacity-0 group-hover/logo:opacity-100 transition-opacity duration-500"></div>
+            <div className="relative w-20 h-20 md:w-24 md:h-24 bg-white/80 backdrop-blur-xl rounded-2xl border border-white/60 shadow-lg flex items-center justify-center transform transition-all duration-700 group-hover/logo:rotate-3 group-hover/logo:scale-105">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" className="text-slate-800">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="url(#logo-gradient)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover/logo:animate-pulse-slow" />
+                <path d="M2 17L12 22L22 17" stroke="url(#logo-gradient)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M2 12L12 17L22 12" stroke="url(#logo-gradient)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <circle cx="12" cy="12" r="2" className="fill-indigo-500 animate-ping-slow" />
+                <defs>
+                  <linearGradient id="logo-gradient" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stopColor="#3b82f6" />
+                    <stop offset="100%" stopColor="#6366f1" />
+                  </linearGradient>
+                </defs>
               </svg>
             </div>
-            <h3 className="text-base md:text-lg font-semibold text-[#1a2b4c]">Campus Recruitment Drive</h3>
           </div>
 
-          <ul className="mt-2 text-[#555] text-sm md:text-[0.98rem] list-disc list-inside space-y-2">
-            <li>Streamlined talent sourcing through university networks</li>
-            <li>Skill-based screening and accurate role alignment</li>
-            <li>Transparent reporting for informed hiring decisions</li>
-          </ul>
-        </div>
-
-        {/* CARD 2 */}
-        <div className="reveal opacity-0 transform translate-y-4 scale-[0.98] transition-all duration-700 ease-[cubic-bezier(.22,.9,.33,1)] bg-white p-5 md:p-6 rounded-xl border border-[#e3e7ee] shadow-[0_4px_14px_rgba(0,0,0,0.08)] min-w-[260px] flex-1 hover:-translate-y-1.5 hover:shadow-[0_14px_30px_rgba(0,0,0,0.12)]">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-10 h-10 bg-[#e8f1ff] rounded-lg flex items-center justify-center flex-shrink-0">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e88e5" aria-hidden>
-                <path d="M4 3h16v2H4V3zm2 4h12v2H6V7zm-2 4h16v2H4v-2zm2 4h12v2H6v-2zm-2 4h16v2H4v-2z" />
-              </svg>
+          <div className="max-w-3xl flex-grow">
+            {/* Refined Heading */}
+            <div className="flex items-center gap-3 mb-3">
+              <span className="h-px w-8 bg-indigo-500"></span>
+              <h2 className="text-sm md:text-base font-bold tracking-widest text-slate-500 uppercase">
+                For Corporates
+              </h2>
             </div>
-            <h3 className="text-base md:text-lg font-semibold text-[#1a2b4c]">Job-Ready Training</h3>
-          </div>
 
-          <ul className="mt-2 text-[#555] text-sm md:text-[0.98rem] list-disc list-inside space-y-2">
-            <li>Training tailored to your tech stack</li>
-            <li>Hands-on mentoring & real-world projects</li>
-            <li>Delivers confident, job-ready talent</li>
-          </ul>
-        </div>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-6">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700">
+                Build a Future-Ready Workforce
+              </span>
+            </h1>
 
-        {/* CARD 3 */}
-        <div className="reveal opacity-0 transform translate-y-4 scale-[0.98] transition-all duration-700 ease-[cubic-bezier(.22,.9,.33,1)] bg-white p-5 md:p-6 rounded-xl border border-[#e3e7ee] shadow-[0_4px_14px_rgba(0,0,0,0.08)] min-w-[260px] flex-1 hover:-translate-y-1.5 hover:shadow-[0_14px_30px_rgba(0,0,0,0.12)]">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-10 h-10 bg-[#e8f1ff] rounded-lg flex items-center justify-center flex-shrink-0">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="#1e88e5" aria-hidden>
-                <path d="M7 3h10v2H7V3zm0 4h10v2H7V7zm-4 4h18v2H3v-2zm4 4h10v2H7v-2zm0 4h10v2H7v-2z" />
-              </svg>
+            {/* Glassmorphic Description Block */}
+            <div className="relative group/desc">
+              {/* Floating Particles */}
+              <div className="absolute -top-4 -right-4 w-2 h-2 bg-blue-400 rounded-full animate-float-slow opacity-60"></div>
+              <div className="absolute -bottom-2 -left-2 w-1.5 h-1.5 bg-indigo-400 rounded-full animate-float-delayed opacity-60"></div>
+
+              <div className="relative bg-white/60 backdrop-blur-md border border-white/50 p-6 md:p-8 rounded-2xl shadow-sm overflow-hidden transition-all duration-500 group-hover/desc:shadow-md group-hover/desc:bg-white/70">
+                {/* Tech Grid Pattern */}
+                <div className="absolute inset-0 bg-[radial-gradient(#6366f1_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.03] group-hover/desc:opacity-[0.06] transition-opacity duration-500"></div>
+
+                {/* Gradient Mesh */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+
+                <p className="relative z-10 text-lg text-slate-600 leading-relaxed font-light">
+                  We identify and develop fresh IT talent by strengthening their technical, professional, and
+                  industry-relevant skills through structured, practical learning methodologies.
+                </p>
+
+                {/* Animated Divider Line */}
+                <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-gradient-to-r from-blue-400 to-indigo-400 group-hover/desc:w-full transition-all duration-1000 ease-out"></div>
+              </div>
             </div>
-            <h3 className="text-base md:text-lg font-semibold text-[#1a2b4c]">Custom Onboarding</h3>
+          </div>
+        </div>
+
+        {/* CARDS SECTION */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+
+          {/* CARD 1: Campus Recruitment Drive (Blue/Cyan Theme) */}
+          <div className="reveal group relative h-full cursor-default">
+            {/* Hover Glow */}
+            <div className="absolute -inset-0.5 bg-gradient-to-br from-blue-400 to-cyan-300 rounded-[2rem] opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-500"></div>
+
+            <div className="relative h-full bg-white/70 backdrop-blur-md rounded-[1.8rem] border border-white/80 p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(59,130,246,0.15)] flex flex-col overflow-hidden">
+              <div className="w-14 h-14 mb-6 rounded-2xl bg-blue-50 flex items-center justify-center group-hover:bg-blue-500 transition-colors duration-500 shadow-sm">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-600 group-hover:text-white transition-colors duration-500 group-hover:animate-pulse-slow">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-slate-800 mb-4 group-hover:text-blue-700 transition-colors">Campus Recruitment Drive</h3>
+              <ul className="space-y-4 flex-grow relative z-10">
+                {["Streamlined talent sourcing through university networks", "Skill-based screening and accurate role alignment", "Transparent reporting for informed hiring decisions"].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-slate-600 group-hover:text-slate-700 transition-colors">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span>
+                    <span className="leading-relaxed text-[15px]">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          <ul className="mt-2 text-[#555] text-sm md:text-[0.98rem] list-disc list-inside space-y-2">
-            <li>Culture-aligned onboarding journeys</li>
-            <li>Tool & workflow familiarization</li>
-            <li>Faster productivity from day one</li>
-          </ul>
+          {/* CARD 2: Job-Ready Training (Orange/Amber Theme) */}
+          <div className="reveal group relative h-full delay-[100ms] cursor-default">
+            <div className="absolute -inset-0.5 bg-gradient-to-br from-orange-400 to-amber-300 rounded-[2rem] opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-500"></div>
+
+            <div className="relative h-full bg-white/70 backdrop-blur-md rounded-[1.8rem] border border-white/80 p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(249,115,22,0.15)] flex flex-col overflow-hidden">
+              <div className="w-14 h-14 mb-6 rounded-2xl bg-orange-50 flex items-center justify-center group-hover:bg-orange-500 transition-colors duration-500 shadow-sm">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-orange-600 group-hover:text-white transition-colors duration-500 group-hover:animate-spin-slow">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-slate-800 mb-4 group-hover:text-orange-700 transition-colors">Job-Ready Training</h3>
+              <ul className="space-y-4 flex-grow relative z-10">
+                {["Training tailored to your tech stack", "Hands-on mentoring & real-world projects", "Delivers confident, job-ready talent"].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-slate-600 group-hover:text-slate-700 transition-colors">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-orange-400 flex-shrink-0"></span>
+                    <span className="leading-relaxed text-[15px]">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* CARD 3: Custom Onboarding (Emerald/Green Theme) */}
+          <div className="reveal group relative h-full delay-[200ms] cursor-default">
+            <div className="absolute -inset-0.5 bg-gradient-to-br from-emerald-400 to-green-300 rounded-[2rem] opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-500"></div>
+
+            <div className="relative h-full bg-white/70 backdrop-blur-md rounded-[1.8rem] border border-white/80 p-8 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(16,185,129,0.15)] flex flex-col overflow-hidden">
+              <div className="w-14 h-14 mb-6 rounded-2xl bg-emerald-50 flex items-center justify-center group-hover:bg-emerald-500 transition-colors duration-500 shadow-sm">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-600 group-hover:text-white transition-colors duration-500 group-hover:animate-bounce-subtle">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-slate-800 mb-4 group-hover:text-emerald-700 transition-colors">Custom Onboarding</h3>
+              <ul className="space-y-4 flex-grow relative z-10">
+                {["Culture-aligned onboarding journeys", "Tool & workflow familiarization", "Faster productivity from day one"].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-slate-600 group-hover:text-slate-700 transition-colors">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0"></span>
+                    <span className="leading-relaxed text-[15px]">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
 
-      {/* PARTNERS SECTION */}
-      <div className="mt-10 reveal opacity-0 transform translate-y-4 scale-[0.98] transition-all duration-700">
-        <h2 className="text-lg md:text-xl font-semibold text-[#1a2b4c]">Our Partners</h2>
-        <p className="text-sm md:text-base text-[#4a566f] mt-2 mb-4">
-          Some of the companies and universities we have worked with.
-        </p>
+        {/* PARTNERS SECTION */}
+        <div className="mt-8 md:mt-12 reveal relative py-12 -mx-6 md:-mx-12 lg:-mx-20 px-6 md:px-12 lg:px-20 bg-slate-100/30">
+          {/* Distinct Background */}
+          <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-30 z-0"></div>
 
-        <div className="relative fadeWrapper">
-          <div className="partnersScroll overflow-hidden py-4">
-            <div
-              className="partnersRow flex gap-7 items-center"
-              style={{ animation: "slidePartners 28s linear infinite" }}
-            >
-              {partners.map((src, idx) => (
-                <div
-                  key={idx}
-                  className="partnerCard min-w-[170px] md:min-w-[230px] h-[80px] md:h-[110px] bg-white rounded-xl border border-[#dde3ee] shadow-[0_4px_14px_rgba(0,0,0,0.08)] flex items-center justify-center p-3 transform transition-all duration-200 hover:-translate-y-1.5 hover:shadow-[0_10px_24px_rgba(0,0,0,0.12)]"
-                >
-                  <img
-                    src={src}
-                    alt={`partner-${idx}`}
-                    className="max-w-[140px] md:max-w-[180px] max-h-[60px] md:max-h-[70px] object-contain filter grayscale-[25%] opacity-95 transition-all duration-200"
-                  />
+          <div className="relative z-10">
+            <div className="text-center mb-10 group/heading">
+              <h2 className="text-2xl md:text-3xl font-bold text-slate-800 tracking-tight inline-block relative cursor-default">
+                Our Trusted Partners
+                <span className="absolute -bottom-2 left-0 w-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 group-hover/heading:w-full transition-all duration-700 ease-out"></span>
+              </h2>
+              <p className="text-slate-500 mt-4 text-lg font-light tracking-wide">Collaborating with world-class organizations.</p>
+            </div>
+
+            <div className="relative w-full overflow-hidden py-6">
+              {/* Gradient Masks */}
+              <div className="absolute top-0 left-0 h-full w-24 md:w-40 bg-gradient-to-r from-slate-50 via-slate-50/90 to-transparent z-20 pointer-events-none"></div>
+              <div className="absolute top-0 right-0 h-full w-24 md:w-40 bg-gradient-to-l from-slate-50 via-slate-50/90 to-transparent z-20 pointer-events-none"></div>
+
+              <div className="partnersScroll flex">
+                <div className="partnersRow flex gap-8 md:gap-12 items-center animate-marquee hover:[animation-play-state:paused] px-4">
+                  {partners.map((src, idx) => (
+                    <div
+                      key={idx}
+                      className="group/card relative flex-shrink-0 w-40 h-24 md:w-48 md:h-28 bg-white/40 backdrop-blur-sm border border-white/60 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex items-center justify-center cursor-pointer"
+                    >
+                      {/* Hover Glow */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 rounded-xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
+
+                      <img
+                        src={src}
+                        alt={`partner-${idx}`}
+                        className="h-8 md:h-10 w-auto object-contain filter grayscale opacity-50 transition-all duration-500 group-hover/card:filter-none group-hover/card:opacity-100 group-hover/card:scale-110 relative z-10"
+                      />
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
           </div>
-
-          {/* fade masks are implemented via global CSS below */}
-        </div>
-      </div>
-
-      {/* CTA */}
-      <div className="reveal opacity-0 transform translate-y-4 scale-[0.98] transition-all duration-700 mt-8 md:mt-10 bg-[#e3efff] rounded-xl p-4 md:p-6 flex items-center justify-between flex-wrap gap-4">
-        <div>
-          <h3 className="text-base md:text-lg font-semibold">Ready to build your next talent cohort?</h3>
-          <p className="text-sm md:text-base text-[#4a566f]">Partner with us to design a hiring and training model tailored to your organisation.</p>
         </div>
 
-        <button className="ctaButton inline-flex items-center gap-2 bg-gradient-to-tr from-[#1e88e5] to-[#42a5f5] text-white rounded-full px-6 md:px-8 h-9 md:h-10 text-xs md:text-sm font-semibold shadow-[0_3px_10px_rgba(30,136,229,0.35)] hover:-translate-y-0.5 transition-transform active:scale-[0.98]">
-          <span>Partner With Us</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-1">
-            <line x1="5" y1="12" x2="19" y2="12" />
-            <polyline points="12 5 19 12 12 19" />
-          </svg>
-        </button>
+        {/* CTA SECTION */}
+        <div className="mt-8 md:mt-12 reveal">
+          <div className="relative rounded-[2.5rem] overflow-hidden p-8 md:p-12 text-center md:text-left group/cta">
+            {/* CTA Background - Clean */}
+            <div className="absolute inset-0 bg-white/60 backdrop-blur-xl border border-white/60 shadow-2xl"></div>
+            <div
+              className="absolute inset-0 bg-gradient-to-r from-indigo-50/80 to-purple-50/80 mix-blend-multiply transition-opacity duration-500"
+            ></div>
+
+            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
+              <div className="max-w-2xl">
+                <h3 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Ready to build your next talent cohort?</h3>
+                <p className="text-lg text-slate-600 font-light">Partner with us to design a hiring and training model tailored to your organization's unique needs and culture.</p>
+              </div>
+
+              <a href="/partner" className="group relative inline-flex items-center gap-3 bg-slate-900 text-white rounded-full px-10 py-4 text-lg font-medium shadow-xl hover:shadow-2xl hover:shadow-indigo-500/20 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                <span className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                <span className="relative z-10">Partner With Us</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      {/* tiny global styles for animations & masks */}
       <style jsx global>{`
-        /* Reveal */
+        /* --- ANIMATIONS --- */
+        
+        /* Reveal on Scroll */
         .reveal {
           opacity: 0;
-          transform: translateY(18px) scale(0.97);
-          filter: blur(4px);
-          transition: opacity 0.7s ease, transform 0.7s ease, filter 0.7s ease;
+          transform: translateY(40px) scale(0.98);
+          filter: blur(10px);
+          transition: opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                      transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+                      filter 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .reveal.visible {
           opacity: 1;
@@ -182,47 +288,65 @@ export default function ManSection() {
           filter: blur(0);
         }
 
-        /* Fade masks for partners row */
-        .fadeWrapper::before,
-        .fadeWrapper::after {
-          content: "";
-          position: absolute;
-          top: 0;
-          width: 72px;
-          height: 100%;
-          z-index: 10;
-          pointer-events: none;
-        }
-        .fadeWrapper::before {
-          left: 0;
-          background: linear-gradient(to right, #f5f7fa, transparent);
-        }
-        .fadeWrapper::after {
-          right: 0;
-          background: linear-gradient(to left, #f5f7fa, transparent);
-        }
-
-        /* partners scroll animation */
-        @keyframes slidePartners {
+        /* Marquee */
+        @keyframes marquee {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
-        .partnersRow { display: flex; }
-        .partnersScroll:hover .partnersRow { animation-play-state: paused !important; }
-
-        /* small image tweak if needed (e.g. infosys) */
-        .partnerCard img[src*="infosys"] {
-          max-width: 160px !important;
-          max-height: 70px !important;
-          transform: scale(1.03);
+        .animate-marquee {
+          animation: marquee 50s linear infinite;
+          width: max-content;
         }
 
-        /* responsive tweaks (if you want slightly different pacing) */
-        @media (max-width: 768px) {
-          .fadeWrapper::before,
-          .fadeWrapper::after { width: 40px; }
-          .partnersRow { animation: slidePartners 18s linear infinite; }
+        /* Blobs */
+        @keyframes blob {
+          0% { transform: translate(0px, 0px) scale(1); }
+          33% { transform: translate(30px, -50px) scale(1.1); }
+          66% { transform: translate(-20px, 20px) scale(0.9); }
+          100% { transform: translate(0px, 0px) scale(1); }
         }
+        .animate-blob {
+          animation: blob 10s infinite;
+        }
+        .animation-delay-2000 { animation-delay: 2s; }
+        .animation-delay-4000 { animation-delay: 4s; }
+
+        /* Icon Animations */
+        @keyframes pulse-slow {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.8; transform: scale(0.95); }
+        }
+        .animate-pulse-slow { animation: pulse-slow 3s infinite ease-in-out; }
+
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow { animation: spin-slow 8s linear infinite; }
+
+        @keyframes bounce-subtle {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-5px); }
+        }
+        .animate-bounce-subtle { animation: bounce-subtle 2s infinite ease-in-out; }
+
+        /* Floating Particles */
+        @keyframes float-slow {
+          0%, 100% { transform: translate(0, 0); }
+          50% { transform: translate(10px, -10px); }
+        }
+        .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+
+        @keyframes float-delayed {
+          0%, 100% { transform: translate(0, 0); }
+          50% { transform: translate(-8px, 8px); }
+        }
+        .animate-float-delayed { animation: float-delayed 7s ease-in-out infinite 1s; }
+
+        @keyframes ping-slow {
+          75%, 100% { transform: scale(2); opacity: 0; }
+        }
+        .animate-ping-slow { animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite; }
       `}</style>
     </div>
   );

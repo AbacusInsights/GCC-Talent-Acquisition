@@ -5,6 +5,8 @@ import CorporatePage from './Corporate/page';
 import HeroSection from '../Components/Hero/HeroSection';
 import StatsSection from '../Components/Stats/StatsSection';
 import EcosystemSection from '../Components/Ecosystem/EcosystemSection';
+import OurTeam from '../Components/OurPartner/OurPartner';
+import WhyLearner from '../Components/WhyL/WhyLearner'
 
 export default function Home() {
   return (
@@ -13,7 +15,10 @@ export default function Home() {
       <StatsSection />
       <EcosystemSection />
       <JobSection />
+      <WhyLearner />
       <VideoSection />
+      <OurTeam />
+
     </div>  
   );
 }
