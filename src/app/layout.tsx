@@ -1,6 +1,6 @@
 // app/layout.tsx
 import "./globals.css";
-import Header from "../Components/NavBar/Header"; // see note about casing below
+import Header from "../Components/Navbar/Header"; // see note about casing below
 import Footer from "../Components/Footer/Footer";
 
 export const metadata = {
