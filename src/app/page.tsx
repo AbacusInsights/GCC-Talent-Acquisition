@@ -1,6 +1,6 @@
 
 
-import VideoSection from '../pages/videopage';
+import VideoSection from '../Pages/videopage';
 import JobSection from '../Components/Jobsection/JobSection';
 import CorporatePage from './Corporate/page';
 import HeroSection from '../Components/Hero/HeroSection';
