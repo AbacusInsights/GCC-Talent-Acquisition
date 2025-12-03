@@ -61,14 +61,16 @@ export default function Header() {
 
             <div className="-ml-6 md:-ml-2">
               <Image
-                src="/Hero/logo.png"
+                src="/Hero/logo1.png"
                 alt="Learners Digital Full Logo"
-                width={240}
-                height={100}
+                width={50}
+                height={15}
                 className="object-contain"
                 priority
               />
             </div>
+                      <div className="font-semibold text-white  text-2xl text-slate-900">Learners Digital</div>
+
           </div>
 
           {/* CENTER: Desktop Nav */}
@@ -152,8 +154,14 @@ function DrawerLeft({ onClose, navItems }) {
         </button>
 
         <div className="flex items-center gap-3 p-5 mt-6">
-          <div className="w-10 h-10 bg-[#0f6fa8] text-white rounded-lg flex items-center justify-center font-semibold">
-            L
+          <div className="w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center">
+            <Image
+              src="/Hero/logo1.png"    // change to your correct icon/logo file
+              alt="Learners Digital Logo"
+              width={30}
+              height={15}
+              className="object-cover"
+            />
           </div>
           <div className="font-semibold text-slate-900">Learners Digital</div>
         </div>

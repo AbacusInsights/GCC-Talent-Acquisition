@@ -42,6 +42,7 @@ export default function Testimonials() {
     "Helpful for placement and interview preparation.",
     "Gained knowledge beyond the classroom.",
     "Transformed my career prospects positively.",
+    "Boosted my skills and job readiness effectively.",
   ];
 
   const scrollingList = [...videoFiles, ...videoFiles];

@@ -50,27 +50,25 @@ export default function HeroWhyUs() {
 
   return (
     <>
-      {/* ---------------- WHY-US SECTION (UPDATED ICON + TITLE INLINE) ---------------- */}
-      <section className="w-full py-12 px-6 bg-[#e3e8f1ff] flex justify-center font-['Roboto']">
+      {/* WHY-US SECTION */}
+      <section className="w-full py-12 px-4 sm:px-6 bg-[#e3e8f1ff] flex justify-center">
         <div className="w-full max-w-7xl">
-          {/* Section Title */}
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-extrabold text-[#0ea5e9]">
+          <div className="text-center mb-10 px-2">
+            <h2 className="text-3xl sm:text-4xl font-semibold text-[#0ea5e9]">
               Why Choose Learners Digital
             </h2>
-            <p className="text-gray-600 mt-2 text-base max-w-2xl mx-auto">
+            <p className="text-gray-600 mt-2 text-base sm:text-lg max-w-2xl mx-auto">
               We bridge the gap between education and employment with proven expertise.
             </p>
           </div>
 
-          {/* GRID */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {/* Responsive Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {whyUs.map((item) => (
               <div
                 key={item.title}
                 className="bg-white rounded-xl shadow p-4 border border-gray-200 hover:shadow-md transition"
               >
-                {/* ICON + TITLE INLINE */}
                 <div className="flex items-center gap-3">
                   <div
                     className={`w-10 h-10 ${item.bg} ${item.color} rounded-lg flex items-center justify-center text-lg`}
@@ -78,57 +76,72 @@ export default function HeroWhyUs() {
                     {item.icon}
                   </div>
 
-                  <h3 className="text-base font-semibold text-[#0E1525] leading-tight">
+                  <h3 className="text-sm sm:text-base font-semibold text-[#0E1525] leading-tight">
                     {item.title}
                   </h3>
                 </div>
 
-                {/* DESCRIPTION */}
-                <p className="text-gray-600 text-sm mt-3 leading-snug">{item.desc}</p>
+                <p className="text-gray-600 text-xs sm:text-sm mt-3 leading-snug">
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ---------------- PHILOSOPHY + METHODOLOGY (SIDE-BY-SIDE) ---------------- */}
-      <section className="w-full px-6 bg-[#e3e8f1ff] font-['Roboto'] flex justify-center">
-        <div className="w-full max-w-7xl bg-[#0E1525] py-8 px-6 rounded-2xl">
+      {/* PHILOSOPHY + METHODOLOGY SECTION */}
+      <section className="w-full px-4 sm:px-6 bg-[#e3e8f1ff] flex justify-center">
+        <div className="w-full max-w-7xl bg-[#0E1525] py-8 sm:py-10 px-4 sm:px-6 rounded-2xl">
           <div className="flex flex-col lg:flex-row items-start gap-8">
-            {/* LEFT COLUMN - Philosophy */}
-            <div className="flex-1">
-              <h2 className="text-white text-2xl font-extrabold mb-4">Our Philosophy</h2>
+            {/* LEFT COLUMN */}
+            <div className="flex-1 w-full">
+              <h2 className="text-white text-xl sm:text-2xl font-extrabold mb-4">
+                Our Philosophy
+              </h2>
 
               <div className="bg-[#111A2E] border border-[#1f2b42] rounded-2xl p-4">
-                <p className="text-gray-300 text-sm italic leading-relaxed">
+                <p className="text-gray-300 text-sm sm:text-base italic leading-relaxed">
                   "Give a Man a Fish, You Feed Him for a Day. Teach a Man To Fish,
                   You Feed Him for a Lifetime."
                 </p>
               </div>
             </div>
 
-            {/* RIGHT COLUMN - Methodology */}
+            {/* RIGHT COLUMN */}
             <div className="w-full lg:w-[52%]">
-              <h2 className="text-white text-2xl font-extrabold mb-4 text-center">
+              <h2 className="text-white text-xl sm:text-2xl font-extrabold mb-4 text-center">
                 Our Learning Methodology
               </h2>
 
-              <div className="flex flex-col md:flex-row justify-center gap-6">
-                <div className="w-56 bg-[#111A2E] border border-[#1f2b42] rounded-2xl p-4 text-center">
-                  <h3 className="text-white text-base font-bold leading-tight">Study<br />Technology</h3>
+              {/* Responsive 3 Cards */}
+              <div className="flex flex-col md:flex-row justify-center items-center gap-6">
+                <div className="w-full md:w-56 bg-[#111A2E] border border-[#1f2b42] rounded-2xl p-4 text-center">
+                  <h3 className="text-white text-base font-bold leading-tight">
+                    Study
+                    <br />Technology
+                  </h3>
                   <p className="text-gray-400 text-sm mt-2">Igniting Independent Learning</p>
                   <div className="h-1 w-14 bg-[#AED57A] mx-auto mt-2 rounded-full"></div>
                 </div>
 
-                <div className="w-56 bg-[#111A2E] border border-[#1f2b42] rounded-2xl p-4 text-center">
+                <div className="w-full md:w-56 bg-[#111A2E] border border-[#1f2b42] rounded-2xl p-4 text-center">
                   <h3 className="text-white text-base font-bold leading-tight">5W1H</h3>
-                  <p className="text-gray-400 text-sm mt-2 leading-snug">Simplifying concepts<br />through powerful questions</p>
+                  <p className="text-gray-400 text-sm mt-2 leading-snug">
+                    Simplifying concepts
+                    <br />through powerful questions
+                  </p>
                   <div className="h-1 w-14 bg-[#AED57A] mx-auto mt-2 rounded-full"></div>
                 </div>
 
-                <div className="w-56 bg-[#111A2E] border border-[#1f2b42] rounded-2xl p-4 text-center">
-                  <h3 className="text-white text-base font-bold leading-tight">Mind<br />Mapping</h3>
-                  <p className="text-gray-400 text-sm mt-2 leading-snug">Organize knowledge the way your brain thinks</p>
+                <div className="w-full md:w-56 bg-[#111A2E] border border-[#1f2b42] rounded-2xl p-4 text-center">
+                  <h3 className="text-white text-base font-bold leading-tight">
+                    Mind
+                    <br />Mapping
+                  </h3>
+                  <p className="text-gray-400 text-sm mt-2 leading-snug">
+                    Organize knowledge the way your brain thinks
+                  </p>
                   <div className="h-1 w-14 bg-[#AED57A] mx-auto mt-2 rounded-full"></div>
                 </div>
               </div>

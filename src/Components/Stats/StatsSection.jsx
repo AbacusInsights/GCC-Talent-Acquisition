@@ -6,7 +6,7 @@ export default function HeroStats() {
   const [hasAnimated, setHasAnimated] = useState(false);
 
   const stats = [
-    { label: "Trained and Placed", value: 3000, suffix: "+" },
+    { label: "Trained and Placed", value: 4000, suffix: "+" },
     { label: "Hiring Partners", value: 7, suffix: "+" },
     { label: "University Partners", value: 20, suffix: "+" },
   ];
@@ -59,90 +59,46 @@ export default function HeroStats() {
   return (
     <section
       ref={sectionRef}
-      style={{
-        width: "100%",
-        backgroundColor: "#0E1525", // Dark strip like screenshot
-        padding: "100x 20px",
-        display: "flex",
-        justifyContent: "center",
-        fontFamily: "Roboto, sans-serif",
-      }}
+      className="w-full bg-[#0E1525] py-20 px-6 flex justify-center"
     >
-      <div
-        style={{
-          width: "100%",
-          maxWidth: "1200px",
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-          gap: "80px",
-          padding: "20px",
-        }}
-      >
-        {stats.map((item) => (
-          <div
-            key={item.label}
-            style={{
-              backgroundColor: "#121A29",
-              borderRadius: "12px",
-              padding: "1px",
-              textAlign: "center",
-              border: "1px solid rgba(255,255,255,0.08)",
-            }}
-          >
+      <div className="w-full max-w-7xl flex flex-col lg:flex-row items-center justify-between gap-12">
+        {/* Left Side: Heading & Subheading */}
+        <div className="max-w-lg text-center lg:text-left">
+          <h2 className="text-4xl font-extrabold text-[#0ea5e9] mb-4">
+            Our Impact
+          </h2>
+          <p className="text-lg text-gray-300 leading-relaxed">
+            Empowering careers and transforming industries through world-class training and placement programs.
+          </p>
+        </div>
+
+        {/* Right Side: Stats Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 w-full lg:w-auto">
+          {stats.map((item) => (
             <div
-              style={{
-                display: "flex",
-                alignItems: "baseline",
-                justifyContent: "center",
-                gap: "8px",
-              }}
+              key={item.label}
+              className="bg-[#121A29] rounded-xl p-6 text-center border border-white/10 hover:border-[#0ea5e9]/50 transition-colors duration-300"
             >
-              <span
-                className="count-number"
-                data-target={item.value}
-                style={{
-                  fontSize: "48px",
-                  fontWeight: "800",
-                  color: "#5285f2ff", // your original blue
-                }}
-              >
-                0
-              </span>
-              <span
-                style={{
-                  fontSize: "32px",
-                  fontWeight: "800",
-                  color: "#5285f2ff",
-                }}
-              >
-                {item.suffix}
-              </span>
+              <div className="flex items-baseline justify-center gap-1 mb-3">
+                <span
+                  className="count-number text-5xl font-extrabold text-[#5285f2]"
+                  data-target={item.value}
+                >
+                  0
+                </span>
+                <span className="text-3xl font-extrabold text-[#5285f2]">
+                  {item.suffix}
+                </span>
+              </div>
+
+              <p className="text-lg font-semibold text-white mb-4">
+                {item.label}
+              </p>
+
+              <div className="h-1 w-16 bg-[#AED57A] rounded-full mx-auto" />
             </div>
-
-            <p
-              style={{
-                marginTop: "12px",
-                fontSize: "18px",
-                fontWeight: "600",
-                color: "#ffffff",
-              }}
-            >
-              {item.label}
-            </p>
-
-            <div
-              style={{
-                marginTop: "12px",
-                height: "4px",
-                width: "64px",
-                borderRadius: "4px",
-                backgroundColor: "#AED57A", // green line (kept original)
-                marginLeft: "auto",
-                marginRight: "auto",
-              }}
-            />
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -141,9 +141,9 @@ export default function ManSection() {
                   <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-4 group-hover:text-blue-700 transition-colors">Campus Recruitment Drive</h3>
+              <h3 className="text-xl font-bold text-slate-800 mb-4 group-hover:text-blue-700 transition-colors">GCC & Talent Acquisition</h3>
               <ul className="space-y-4 flex-grow relative z-10">
-                {["Streamlined talent sourcing through university networks", "Skill-based screening and accurate role alignment", "Transparent reporting for informed hiring decisions"].map((item, i) => (
+                {["Build and scale Global Capability Centers", "End-to-end workforce sourcing and screening", "High-quality, role-aligned talent pipelines"].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-slate-600 group-hover:text-slate-700 transition-colors">
                     <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span>
                     <span className="leading-relaxed text-[15px]">{item}</span>
@@ -163,14 +163,17 @@ export default function ManSection() {
                   <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-4 group-hover:text-orange-700 transition-colors">Job-Ready Training</h3>
+              <h3 className="text-xl font-bold text-slate-800 mb-4 group-hover:text-orange-700 transition-colors">Proof of Concepts (POC)</h3>
               <ul className="space-y-4 flex-grow relative z-10">
-                {["Training tailored to your tech stack", "Hands-on mentoring & real-world projects", "Delivers confident, job-ready talent"].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-slate-600 group-hover:text-slate-700 transition-colors">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-orange-400 flex-shrink-0"></span>
-                    <span className="leading-relaxed text-[15px]">{item}</span>
-                  </li>
-                ))}
+                {[
+                  "Rapid prototypes for validation",
+                  "Test ideas before full investment",
+                  "Accelerate innovation & decision making"].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-slate-600 group-hover:text-slate-700 transition-colors">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-orange-400 flex-shrink-0"></span>
+                      <span className="leading-relaxed text-[15px]">{item}</span>
+                    </li>
+                  ))}
               </ul>
             </div>
           </div>
@@ -186,14 +189,16 @@ export default function ManSection() {
                   <polyline points="22 4 12 14.01 9 11.01"></polyline>
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-4 group-hover:text-emerald-700 transition-colors">Custom Onboarding</h3>
+              <h3 className="text-xl font-bold text-slate-800 mb-4 group-hover:text-emerald-700 transition-colors">Managed Office Services</h3>
               <ul className="space-y-4 flex-grow relative z-10">
-                {["Culture-aligned onboarding journeys", "Tool & workflow familiarization", "Faster productivity from day one"].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 text-slate-600 group-hover:text-slate-700 transition-colors">
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0"></span>
-                    <span className="leading-relaxed text-[15px]">{item}</span>
-                  </li>
-                ))}
+                {["End-to-end workspace setup",
+                  "Fully managed infrastructure support",
+                  "Scale teams quickly with zero overhead"].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-slate-600 group-hover:text-slate-700 transition-colors">
+                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0"></span>
+                      <span className="leading-relaxed text-[15px]">{item}</span>
+                    </li>
+                  ))}
               </ul>
             </div>
           </div>
@@ -270,7 +275,7 @@ export default function ManSection() {
 
       </div>
 
-      <style jsx global>{`
+      <style>{`
         /* --- ANIMATIONS --- */
         
         /* Reveal on Scroll */

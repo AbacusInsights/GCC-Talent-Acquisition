@@ -6,7 +6,8 @@ import HeroSection from '../Components/Hero/HeroSection';
 import StatsSection from '../Components/Stats/StatsSection';
 import EcosystemSection from '../Components/Ecosystem/EcosystemSection';
 import OurTeam from '../Components/OurPartner/OurPartner';
-import WhyLearner from '../Components/WhyL/WhyLearner'
+import WhyLearner from '../Components/WhyL/WhyLearner';
+import TestimonialSection from '../Components/Testimonials/Testinomials';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <WhyLearner />
       <VideoSection />
       <OurTeam />
+      <TestimonialSection />  
 
     </div>  
   );

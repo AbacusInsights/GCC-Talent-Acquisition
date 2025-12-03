@@ -26,23 +26,23 @@ export default function UniversitySection() {
     return () => observer.disconnect();
   }, []);
 
-  const partners = [
-    "/Univer/IITM.svg",
-    "/Univer/NIE.png",
-    "/Univer/VVCE.png",
-    "/Univer/Malnad.png",
-    "/Univer/ATME.png",
-    "/Univer/MIT.png",
-    "/Univer/KIT.png",
-    // duplicates for smooth scroll
-    "/Univer/IITM.svg",
-    "/Univer/NIE.png",
-    "/Univer/VVCE.png",
-    "/Univer/Malnad.png",
-    "/Univer/ATME.png",
-    "/Univer/MIT.png",
-    "/Univer/KIT.png",
-  ];
+  // const partners = [
+  //   "/Univer/IITM.svg",
+  //   "/Univer/NIE.png",
+  //   "/Univer/VVCE.png",
+  //   "/Univer/Malnad.png",
+  //   "/Univer/ATME.png",
+  //   "/Univer/MIT.png",
+  //   "/Univer/KIT.png",
+  // duplicates for smooth scroll
+  //   "/Univer/IITM.svg",
+  //   "/Univer/NIE.png",
+  //   "/Univer/VVCE.png",
+  //   "/Univer/Malnad.png",
+  //   "/Univer/ATME.png",
+  //   "/Univer/MIT.png",
+  //   "/Univer/KIT.png",
+  // ];
 
   return (
     <div
@@ -183,22 +183,22 @@ export default function UniversitySection() {
         </div>
 
         {/* PARTNERS SECTION */}
-        <div className="mt-8 md:mt-12 reveal relative py-12 -mx-6 md:-mx-12 lg:-mx-20 px-6 md:px-12 lg:px-20 bg-slate-100/30">
-          {/* Distinct Background */}
-          <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-30 z-0"></div>
+        {/* <div className="mt-8 md:mt-12 reveal relative py-12 -mx-6 md:-mx-12 lg:-mx-20 px-6 md:px-12 lg:px-20 bg-slate-100/30"> */}
+        {/* Distinct Background */}
+        {/* <div className="absolute inset-0 bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:24px_24px] opacity-30 z-0"></div> */}
 
-          <div className="relative z-10">
+        {/* <div className="relative z-10">
             <div className="text-center mb-10 group/heading">
               <h2 className="text-2xl md:text-3xl font-bold text-slate-800 tracking-tight inline-block relative cursor-default">
                 Our Partners
                 <span className="absolute -bottom-2 left-0 w-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 group-hover/heading:w-full transition-all duration-700 ease-out"></span>
               </h2>
               <p className="text-slate-500 mt-4 text-lg font-light tracking-wide">Some of the universities we collaborate with to drive skill-based education.</p>
-            </div>
+            </div> */}
 
-            <div className="relative w-full overflow-hidden py-6">
-              {/* Gradient Masks */}
-              <div className="absolute top-0 left-0 h-full w-24 md:w-40 bg-gradient-to-r from-slate-50 via-slate-50/90 to-transparent z-20 pointer-events-none"></div>
+        {/* <div className="relative w-full overflow-hidden py-6"> */}
+        {/* Gradient Masks */}
+        {/* <div className="absolute top-0 left-0 h-full w-24 md:w-40 bg-gradient-to-r from-slate-50 via-slate-50/90 to-transparent z-20 pointer-events-none"></div>
               <div className="absolute top-0 right-0 h-full w-24 md:w-40 bg-gradient-to-l from-slate-50 via-slate-50/90 to-transparent z-20 pointer-events-none"></div>
 
               <div className="partnersScroll flex">
@@ -207,24 +207,24 @@ export default function UniversitySection() {
                     <div
                       key={idx}
                       className="group/card relative flex-shrink-0 w-40 h-24 md:w-48 md:h-28 bg-white/40 backdrop-blur-sm border border-white/60 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex items-center justify-center cursor-pointer"
-                    >
+                    > */}
 
 
-                      {/* Hover Glow */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 rounded-xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
+        {/* Hover Glow */}
+        {/* <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 rounded-xl opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
 
                       <img
                         src={src}
-                        alt={`partner-${idx}`}
+                        alt={partner-${idx}}
                         className="h-12 md:h-16 w-auto object-contain filter grayscale opacity-50 transition-all duration-500 group-hover/card:filter-none group-hover/card:opacity-100 group-hover/card:scale-110 relative z-10"
-                      />
-                    </div>
+                      /> */}
+        {/* </div>
                   ))}
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* CTA SECTION */}
         <div className="mt-8 md:mt-12 reveal">
@@ -255,7 +255,7 @@ export default function UniversitySection() {
 
       </div>
 
-      <style jsx global>{`
+      <style>{`
         /* --- ANIMATIONS --- */
         
         /* Reveal on Scroll */

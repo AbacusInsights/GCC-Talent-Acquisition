@@ -27,30 +27,43 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1.6fr_0.9fr_1fr_1.1fr] gap-10 text-gray-300">
 
         {/* ---- COLUMN 1: LOGO + OVERVIEW + SOCIAL ---- */}
-        <div>
-          <Image
-            src="/Hero/logo.png"
-            width={230}
-            height={110}
-            alt="Learners Digital Logo"
-            className="object-contain mb-6"
-          />
+        <div className="-ml-6 md:-ml-2">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/Hero/logo1.png"
+              alt="Learners Digital Full Logo"
+              width={50}
+              height={50}
+              className="object-contain"
+              priority
+            />
+
+            <div className="font-semibold text-white text-2xl">
+              Learners Digital
+            </div>
+          </div>
+
 
           <p className="text-sm leading-6 opacity-90 mb-4">
             Empowering global talent through industry-driven learning, innovation, and deployment opportunities across the GCC region.
           </p>
 
           {/* Social Icons */}
+          {/* Social Icons */}
           <div className="flex gap-4 text-xl mt-4">
-            {[FaFacebookF, FaInstagram, FaTwitter, FaYoutube, FaLinkedinIn].map(
-              (Icon, i) => (
-                <Icon
-                  key={i}
-                  className="cursor-pointer hover:text-[#14A4F3] transition"
-                />
-              )
-            )}
+            {[
+              // { Icon: FaFacebookF, url: "https://facebook.com" },
+              { Icon: FaInstagram, url: "https://www.instagram.com/learners.digital?igsh=MWZ6ZGhmbDBqbms0dQ==" },
+              // { Icon: FaTwitter, url: "https://twitter.com" },
+              { Icon: FaYoutube, url: "https://youtube.com/@learnerspuc6316?si=2tburLD6DLWF5ei7" },
+              { Icon: FaLinkedinIn, url: "https://www.linkedin.com/company/learners-digital/" },
+            ].map(({ Icon, url }, i) => (
+              <Link key={i} href={url} target="_blank">
+                <Icon className="cursor-pointer hover:text-[#14A4F3] transition" />
+              </Link>
+            ))}
           </div>
+
         </div>
 
         {/* ---- COLUMN 2: QUICK LINKS ---- */}
@@ -58,8 +71,8 @@ export default function Footer() {
           <h3 className="text-white font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 text-sm">
             <li><Link href="/About" className="hover:text-[#14A4F3]">About Us</Link></li>
-            <li><Link href="/jobs" className="hover:text-[#14A4F3]">Jobs</Link></li>
-            <li><Link href="/internship" className="hover:text-[#14A4F3]">Internships</Link></li>
+            <li><Link href="/Careers" className="hover:text-[#14A4F3]">Careers</Link></li>
+            <li><Link href="/Corporate" className="hover:text-[#14A4F3]">Corporates</Link></li>
             {/* <li><Link href="/partners" className="hover:text-[#14A4F3]">GCC Connect</Link></li> */}
             <li><Link href="/University" className="hover:text-[#14A4F3]">Universities</Link></li>
           </ul>
@@ -75,12 +88,22 @@ export default function Footer() {
           </p>
 
           <p className="text-sm flex items-center gap-2">
-            <FaPhoneAlt /> +91 99169 33202
+            <FaPhoneAlt />
+            <a href="tel:+919916933202" className="hover:text-[#14A4F3] transition">
+              +91 99169 33202
+            </a>
           </p>
 
           <p className="text-sm flex items-center gap-2 mt-2">
-            <FaEnvelope /> murali.konareddy@learnersdigital.com
+            <FaEnvelope />
+            <a
+              href="mailto:connect@learnersdigital.com"
+              className="hover:text-[#14A4F3] transition"
+            >
+              connect@learnersdigital.com
+            </a>
           </p>
+
         </div>
 
         {/* ---- COLUMN 4: CALL-TO-ACTION ---- */}
