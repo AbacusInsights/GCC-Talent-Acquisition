@@ -182,7 +182,7 @@ function DrawerLeft({ onClose, navItems }) {
         <div className="mt-auto p-5 flex gap-3">
           <a href="/login" className="text-gray-600 hover:text-black text-sm">Login</a>
           <a
-            href="/enquiry"
+            href="/Contact"
             className="ml-auto bg-[#0f6fa8] text-white px-4 py-2 rounded-full text-sm hover:opacity-95"
           >
             Enquiry Now
